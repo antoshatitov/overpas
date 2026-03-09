@@ -1,0 +1,134 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--border-color);
+  background:
+    linear-gradient(180deg, rgba(236, 234, 229, 0.94), rgba(236, 234, 229, 0.88)),
+    var(--bg);
+  backdrop-filter: blur(18px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100% - 2rem, var(--container-max));
+  min-height: 4.75rem;
+  margin: 0 auto;
+}
+
+.brand {
+  display: grid;
+  gap: 0.125rem;
+  text-decoration: none;
+}
+
+.brandMark {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brandMeta {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav {
+  position: fixed;
+  inset: 4.75rem 1rem auto 1rem;
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  background: rgba(248, 247, 243, 0.98);
+  box-shadow: var(--shadow-soft);
+  transform-origin: top;
+}
+
+.navClosed {
+  display: none;
+}
+
+.nav a {
+  padding: 0.75rem 0.875rem;
+  border: 1px solid transparent;
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  border-color: var(--border-color);
+  background: rgba(31, 39, 46, 0.04);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.phone {
+  display: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.button,
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--graphite);
+  background: var(--graphite);
+  color: var(--surface-strong);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button {
+  background: linear-gradient(135deg, var(--accent), #a85b32);
+  border-color: transparent;
+}
+
+.toggle {
+  background: transparent;
+  color: var(--graphite);
+}
+
+@media (min-width: 64rem) {
+  .toggle {
+    display: none;
+  }
+
+  .nav,
+  .navClosed {
+    position: static;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .phone {
+    display: inline-flex;
+  }
+}

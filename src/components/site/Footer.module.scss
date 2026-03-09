@@ -1,0 +1,89 @@
+.footer {
+  border-top: 1px solid var(--border-color);
+  background:
+    radial-gradient(circle at top left, rgba(0, 112, 122, 0.16), transparent 34%),
+    #1b2329;
+  color: rgba(247, 244, 238, 0.92);
+}
+
+.inner {
+  display: grid;
+  gap: 2rem;
+  width: min(100% - 2rem, var(--container-max));
+  padding: 3rem 0;
+  margin: 0 auto;
+}
+
+.brand {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 38rem;
+}
+
+.brandMark {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.copy {
+  color: rgba(247, 244, 238, 0.7);
+  max-width: 46ch;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.label {
+  color: rgba(247, 244, 238, 0.55);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.value,
+.links a {
+  display: inline-flex;
+  margin-top: 0.5rem;
+  color: #f7f4ee;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.links {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(247, 244, 238, 0.55);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
