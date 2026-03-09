@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Overpas
 
-## Getting Started
+Сайт для компании «Оверпас» на `Next.js 15 + Payload CMS 3 + PostgreSQL`.
 
-First, run the development server:
+## Стек
+
+- `Next.js 15.4`
+- `React 19`
+- `TypeScript`
+- `Payload CMS 3`
+- `PostgreSQL`
+- `SCSS Modules`
+
+## Локальный запуск
+
+1. Установить зависимости:
+
+```bash
+npm install
+```
+
+2. Скопировать переменные окружения:
+
+```bash
+cp .env.example .env
+```
+
+3. Поднять PostgreSQL:
+
+```bash
+docker compose up -d postgres
+```
+
+4. Сгенерировать вспомогательные файлы Payload:
+
+```bash
+npm run generate:importmap
+npm run generate:types
+```
+
+5. Запустить приложение:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Сайт будет доступен на `http://localhost:3000`, админка Payload на `http://localhost:3000/admin`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Основные маршруты
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/`
+- `/services`
+- `/services/[slug]`
+- `/cases`
+- `/cases/[slug]`
+- `/about`
+- `/contacts`
+- `/admin`
 
-## Learn More
+## Лиды
 
-To learn more about Next.js, take a look at the following resources:
+Публичная форма отправляет данные в `POST /api/leads`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+При настроенной базе:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- заявка сохраняется в коллекцию `lead-requests`
+- отправляется уведомление в Telegram
+- отправляется email-уведомление
 
-## Deploy on Vercel
+Без `DATABASE_URI` маршрут не падает, но работает в режиме graceful fallback и пишет предупреждение в лог.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Docker Compose
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Для production/VPS предусмотрены:
+
+- `Dockerfile`
+- `docker-compose.yml`
+
+Они рассчитаны на self-hosted развертывание приложения и PostgreSQL.

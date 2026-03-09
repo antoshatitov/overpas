@@ -1,26 +1,64 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #eceae5;
+  --surface: #f8f7f3;
+  --surface-strong: #fbfaf7;
+  --graphite: #1f272e;
+  --text: #243039;
+  --muted: #66727a;
+  --border-color: rgba(31, 39, 46, 0.12);
+  --accent: #bf6c3f;
+  --accent-cool: #0d7476;
+  --shadow-soft: 0 1.25rem 3.75rem rgba(31, 39, 46, 0.08);
+  --container-max: 76rem;
+  --font-body: 'Golos Text Variable', 'Golos Text', sans-serif;
+  --font-display: 'IBM Plex Sans Condensed', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 20rem;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(191, 108, 63, 0.18), transparent 26%),
+    radial-gradient(circle at top left, rgba(13, 116, 118, 0.14), transparent 34%),
+    var(--bg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(13, 116, 118, 0.18);
 }

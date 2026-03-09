@@ -1,0 +1,441 @@
+.page {
+  width: min(100% - 2rem, var(--container-max));
+  margin: 0 auto;
+  padding: 1.25rem 0 5rem;
+}
+
+.section,
+.sectionAlt,
+.sectionDark {
+  padding: 3rem 0;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  padding-top: 0.75rem;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.heroMain,
+.heroSide,
+.heroBand,
+.serviceCard,
+.caseCard,
+.processCard,
+.testimonial,
+.faqCard,
+.statCard,
+.credentialCard,
+.detailPanel,
+.contactCard,
+.ctaPanel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: rgba(248, 247, 243, 0.76);
+  box-shadow: var(--shadow-soft);
+}
+
+.heroMain {
+  display: grid;
+  gap: 1.25rem;
+  min-height: 28rem;
+  padding: clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.heroMain::after {
+  position: absolute;
+  inset: auto -2rem -5rem auto;
+  width: 16rem;
+  height: 16rem;
+  background: radial-gradient(circle, rgba(13, 116, 118, 0.18), transparent 70%);
+  content: '';
+}
+
+.heroKicker,
+.smallLabel {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroTitle,
+.detailTitle,
+.displayTitle {
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.6rem);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.heroText,
+.detailIntro,
+.cardText,
+.muted {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.heroActions,
+.heroAudience {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.linkArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.875rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--accent), #a55d37);
+  color: #f8f7f3;
+}
+
+.secondaryButton {
+  border: 1px solid var(--graphite);
+  color: var(--graphite);
+}
+
+.linkArrow {
+  justify-content: flex-start;
+  padding: 0;
+  color: var(--accent-cool);
+}
+
+.heroSide {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  background:
+    linear-gradient(160deg, rgba(13, 116, 118, 0.1), rgba(248, 247, 243, 0.7)),
+    rgba(248, 247, 243, 0.9);
+}
+
+.audienceCard {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.audienceCard strong {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.heroBand {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem 1.2rem;
+  background:
+    linear-gradient(90deg, rgba(31, 39, 46, 0.96), rgba(31, 39, 46, 0.9)),
+    #1f272e;
+  color: #f8f7f3;
+}
+
+.bandGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.bandItem {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.bandItem span:first-child {
+  color: rgba(248, 247, 243, 0.56);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.statsGrid,
+.serviceGrid,
+.caseGrid,
+.processGrid,
+.testimonialGrid,
+.faqGrid,
+.credentialGrid,
+.contactGrid,
+.detailGrid,
+.metricsGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.statCard,
+.serviceCard,
+.processCard,
+.testimonial,
+.faqCard,
+.credentialCard,
+.contactCard,
+.detailPanel {
+  padding: 1.25rem;
+}
+
+.statValue,
+.metricValue {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.statLabel,
+.metricLabel,
+.cardTitle,
+.processTitle,
+.faqQuestion,
+.contactTitle,
+.detailLabel {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: 1.45rem;
+}
+
+.cardList,
+.detailList {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.caseCard {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+}
+
+.caseTop {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.caseRibbon {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.45rem 0.65rem;
+  background: rgba(13, 116, 118, 0.12);
+  color: var(--accent-cool);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.caseMetrics {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.caseMetric {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--muted);
+}
+
+.caseMetric strong {
+  color: var(--text);
+}
+
+.processIndex {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 0.9;
+}
+
+.testimonial {
+  display: grid;
+  gap: 1rem;
+  background:
+    linear-gradient(160deg, rgba(191, 108, 63, 0.08), rgba(248, 247, 243, 0.9)),
+    rgba(248, 247, 243, 0.9);
+}
+
+.quote {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.quoteMeta {
+  display: grid;
+  gap: 0.15rem;
+  color: var(--muted);
+}
+
+.faqCard {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faqAnswer {
+  color: var(--muted);
+}
+
+.ctaPanel {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  background:
+    linear-gradient(135deg, rgba(31, 39, 46, 0.95), rgba(13, 116, 118, 0.92)),
+    #1f272e;
+  color: #f8f7f3;
+}
+
+.ctaPanel .muted,
+.ctaPanel .heroKicker {
+  color: rgba(248, 247, 243, 0.7);
+}
+
+.detailHero {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+}
+
+.detailPanelAccent {
+  background:
+    linear-gradient(145deg, rgba(13, 116, 118, 0.12), rgba(255, 255, 255, 0.82)),
+    rgba(248, 247, 243, 0.92);
+}
+
+.detailMeta {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.detailMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contactCard {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.contactCard a,
+.contactCard span {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.notFound {
+  width: min(100% - 2rem, 42rem);
+  margin: 4rem auto;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  background: rgba(248, 247, 243, 0.86);
+}
+
+@media (min-width: 48rem) {
+  .page {
+    padding-top: 2rem;
+  }
+
+  .heroActions,
+  .bandGrid,
+  .statsGrid,
+  .processGrid,
+  .testimonialGrid,
+  .credentialGrid,
+  .contactGrid,
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .serviceGrid,
+  .caseGrid,
+  .faqGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ctaPanel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 26rem);
+    align-items: start;
+  }
+}
+
+@media (min-width: 64rem) {
+  .section,
+  .sectionAlt,
+  .sectionDark {
+    padding: 4.5rem 0;
+  }
+
+  .heroGrid,
+  .detailGrid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+  }
+
+  .statsGrid,
+  .serviceGrid,
+  .caseGrid,
+  .processGrid,
+  .credentialGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .testimonialGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .faqGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroActions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: fit-content;
+  }
+}
